@@ -42,3 +42,4 @@ jobs:
           ISSUE_BODY: ${{ github.event.issue.body }}
           ISSUE_URL: ${{github.event.issue.url}}
           REPO_NAME: ${{github.repository}}
+          GITHUB_SECRET: ${{secrets.GITHUB_TOKEN}}
