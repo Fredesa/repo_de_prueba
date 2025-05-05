@@ -203,15 +203,11 @@ body_request_teams= {
     ]
 }
 
+github bod
+
 ## Generacion de texto para que se añada en github
 codigo_azure_github = {
-    "body": f"""
-    {body_request}
-    
-    ### Codigo Azure:
-
-    {codigo_azure}
-    """
+    "body": f"{body_request}\n### Codigo Azure:\n{codigo_azure}"
 }
 
 headers_github = {
