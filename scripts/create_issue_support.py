@@ -203,16 +203,18 @@ body_request_teams= {
 }
 
 ## Generacion de texto para que se añada en github
-codigo_azure_github = f"""
+codigo_azure_github = {
+    "body": f"""
+    {body_request}
+    
+    ### Codigo Azure:
 
-{body_request}
-
-### Codigo Azure:
-
-{codigo_azure}
-"""
+    {codigo_azure}
+    """
+}
 ##Evento de actualizacion de datos en Github
 
+respUpdateGithub = requests.patch(f"{issue_url}",json=codigo_azure_github)
 
 ##Evento de generacion de issue en Azure
 respTeams = requests.post(f"https://prod-41.westus.logic.azure.com:443/workflows/3b6817637bf0410291d94180ed92381b/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=29rs208Kx9Adod43QwAgS7WxjgNPLf4TRf4r5kY7Ps0", json=body_request_teams)
