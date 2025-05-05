@@ -33,6 +33,7 @@ issue_title = os.getenv("ISSUE_TITLE", "Título no disponible")
 issue_body = os.getenv("ISSUE_BODY", "Cuerpo no disponible")
 issue_url = os.getenv("ISSUE_URL", "Direccion no disponible")
 repo_name = os.getenv("REPO_NAME","Nombre no disponible")
+github_secret = os.getenv("GITHUB_SECRET","Secreto no disponible")
 
 
 ## Variables locales
@@ -212,9 +213,14 @@ codigo_azure_github = {
     {codigo_azure}
     """
 }
+
+headers_github = {
+    "Authorization": f"Bearer {github_secret}",
+    "Accept": "application/vnd.github+json"
+}
 ##Evento de actualizacion de datos en Github
 
-respUpdateGithub = requests.patch(f"{issue_url}",json=codigo_azure_github)
+respUpdateGithub = requests.patch(f"{issue_url}",headers= headers_github, json=codigo_azure_github)
 
 ##Evento de generacion de issue en Azure
 respTeams = requests.post(f"https://prod-41.westus.logic.azure.com:443/workflows/3b6817637bf0410291d94180ed92381b/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=29rs208Kx9Adod43QwAgS7WxjgNPLf4TRf4r5kY7Ps0", json=body_request_teams)
