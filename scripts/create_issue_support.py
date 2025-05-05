@@ -42,7 +42,7 @@ nombre_del_componente = search_text("Nombre del componente") if search_text("Nom
 version = search_text("Version del componente Galatea")
 programa = search_text("Programa") if search_text("Programa") != None else search_text("EVC")
 evidencias = search_text("Adjunte Evidencias")
-clasificacion = "Mobile"
+clasificacion = "Mobile" if repo_name.find('MOBILE') != -1 else "Web"
 id_issue_github = extraer_id_final(issue_url)
 issue_route = limpiar_url(issue_url)
 
@@ -137,6 +137,17 @@ body_request= [
   }
 ]
 
+
+
+### Peticiones
+
+##Evento de generacion de issue en Azure
+resp = requests.post(f"https://dev.azure.com/GrupoBancolombia/Vicepresidencia%20Servicios%20de%20Tecnología/_apis/wit/workitems/$issue?api-version=7.1-preview.3", json=body_request, headers=headers)
+
+## Optencion de ID de Issue en Azure DevOps
+resp_string = json.loads(resp.content)
+codigo_azure = resp_string['id']
+
 ##Cuerpo de Peticion de mensaje en teams
 body_request_teams= {
     "type": "message",
@@ -190,15 +201,6 @@ body_request_teams= {
         }
     ]
 }
-
-### Peticiones
-
-##Evento de generacion de issue en Azure
-resp = requests.post(f"https://dev.azure.com/GrupoBancolombia/Vicepresidencia%20Servicios%20de%20Tecnología/_apis/wit/workitems/$issue?api-version=7.1-preview.3", json=body_request, headers=headers)
-
-## Optencion de ID de Issue en Azure DevOps
-resp_string = json.loads(resp.content)
-codigo_azure = resp_string['id']
 
 ## Generacion de texto para que se añada en github
 codigo_azure_github = f"""
