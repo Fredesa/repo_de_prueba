@@ -1,0 +1,27 @@
+name: Automatization to update label and url when is updated in Github
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  process_issue:
+    if: contains(github.event.issue.labels.*.name, 'c:bug')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Mostrar información del Issue Title
+        run: pip install requests
+
+      - name: Mostrar información del Issue Title
+        run: pip3 install requests
+
+      - name: Mostrar información del label
+        run: echo "Nuevo Issue creado = ${{ github.event.label.name }}"
