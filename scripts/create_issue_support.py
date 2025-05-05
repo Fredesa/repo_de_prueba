@@ -222,6 +222,7 @@ respUpdateGithub = requests.patch(f"{issue_url}",headers= headers_github, json=c
 respTeams = requests.post(f"https://prod-41.westus.logic.azure.com:443/workflows/3b6817637bf0410291d94180ed92381b/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=29rs208Kx9Adod43QwAgS7WxjgNPLf4TRf4r5kY7Ps0", json=body_request_teams)
 
 print(resp)
+print(respUpdateGithub)
 print(respTeams)
 
     
