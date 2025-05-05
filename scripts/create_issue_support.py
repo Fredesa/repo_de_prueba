@@ -204,12 +204,13 @@ body_request_teams= {
 
 ## Generacion de texto para que se añada en github
 codigo_azure_github = f"""
+
+{body_request}
+
 ### Codigo Azure:
 
 {codigo_azure}
 """
-body_request = body_request+codigo_azure_github
-
 ##Evento de actualizacion de datos en Github
 
 
