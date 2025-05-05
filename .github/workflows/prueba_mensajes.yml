@@ -6,6 +6,7 @@ on:
 
 jobs:
   process_issue:
+    permissions: write-all
     if: contains(github.event.issue.labels.*.name, 'c:bug')
     runs-on: ubuntu-latest
     steps:
