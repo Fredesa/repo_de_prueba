@@ -42,7 +42,7 @@ nombre_del_componente = search_text("Nombre del componente") if search_text("Nom
 version = search_text("Version del componente Galatea")
 programa = search_text("Programa") if search_text("Programa") != None else search_text("EVC")
 evidencias = search_text("Adjunte Evidencias")
-clasificacion = "Mobile" if repo_name.find('MOBILE') != -1 else "Web"
+clasificacion = "Mobile"
 id_issue_github = extraer_id_final(issue_url)
 issue_route = limpiar_url(issue_url)
 
