@@ -54,7 +54,8 @@ def updateArea(route):
     ]
     resp = requests.post(f"https://dev.azure.com/GrupoBancolombia/Vicepresidencia%20Servicios%20de%20Tecnología/_apis/wit/workitems/{azure_id}?api-version=7.1-preview.3", json=body_update_area, headers=headers)
     print(f"Actualizacion de Area:{resp.content}")
-    
+
+print(azure_id)
 match new_label:
     case "PO":
         updateTag(" PO")
