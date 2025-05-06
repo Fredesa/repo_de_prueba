@@ -47,7 +47,7 @@ def updateTag(tag):
 def updateArea(route):
     body_update_area = [
         {
-            "op": "update",
+            "op": "replace",
             "path": "/fields/System.AreaPath",
             "value": f"Vicepresidencia Servicios de Tecnología\\Distribución\\EVC - GALATEA MODERNIZACION DE CANALES\\{route}"
         }
