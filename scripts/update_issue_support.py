@@ -21,7 +21,7 @@ new_label = os.getenv("NEW_LABEL", "Nuevo label no disponible")
 
 
 ## Variables locales
-azure_id = search_text("Codigo Azure")
+azure_id = search_text("Codigo Azure:")
 
 ### Cuerpos de Peticiones
 
