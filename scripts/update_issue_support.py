@@ -40,7 +40,7 @@ def updateTag(tag):
             "value": f"{tag}"
         }
     ]
-    resp = requests.post(f"https://dev.azure.com/GrupoBancolombia/Vicepresidencia%20Servicios%20de%20Tecnología/_apis/wit/workitems/{azure_id}?api-version=7.1-preview.3", json=body_add_tag, headers=headers)
+    resp = requests.patch(f"https://dev.azure.com/GrupoBancolombia/Vicepresidencia%20Servicios%20de%20Tecnología/_apis/wit/workitems/{azure_id}?api-version=7.1-preview.3", json=body_add_tag, headers=headers)
     print(f"Actualizacion de Tag:{resp.content}")
 
 
@@ -52,7 +52,7 @@ def updateArea(route):
             "value": f"Vicepresidencia Servicios de Tecnología\\Distribución\\EVC - GALATEA MODERNIZACION DE CANALES\\{route}"
         }
     ]
-    resp = requests.post(f"https://dev.azure.com/GrupoBancolombia/Vicepresidencia%20Servicios%20de%20Tecnología/_apis/wit/workitems/{azure_id}?api-version=7.1-preview.3", json=body_update_area, headers=headers)
+    resp = requests.patch(f"https://dev.azure.com/GrupoBancolombia/Vicepresidencia%20Servicios%20de%20Tecnología/_apis/wit/workitems/{azure_id}?api-version=7.1-preview.3", json=body_update_area, headers=headers)
     print(f"Actualizacion de Area:{resp.content}")
 
 print(azure_id)
