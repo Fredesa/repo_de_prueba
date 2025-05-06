@@ -54,3 +54,21 @@ def updateArea(route):
     ]
     resp = requests.post(f"https://dev.azure.com/GrupoBancolombia/Vicepresidencia%20Servicios%20de%20Tecnología/_apis/wit/workitems/{azure_id}?api-version=7.1-preview.3", json=body_update_area, headers=headers)
     print(f"Actualizacion de Area:{resp}")
+    
+match new_label:
+    case "PO":
+        updateTag(" PO")
+    case "P1":
+        updateTag(" P1")
+    case "P2":
+        updateTag(" P2")
+    case "P3":
+        updateTag(" P3")
+    case "team-soporte":
+        updateArea("EQU0907 - ATLAS")
+    case "team-financieros":
+        updateArea("EQU0825 - VANAHEIM")
+    case _:
+        print("El tag no genera actualizacion")
+        
+    
