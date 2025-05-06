@@ -25,3 +25,9 @@ jobs:
 
       - name: Mostrar información del label
         run: echo "Nuevo Issue creado = ${{ github.event.label.name }}"
+
+      - name: Ejecutar script para actualizar issue
+        run: python scripts/update_issue_support.py
+        env:
+          NEW_LABEL: ${{github.event.label.name}}
+          ISSUE_BODY: ${{ github.event.issue.body}}
