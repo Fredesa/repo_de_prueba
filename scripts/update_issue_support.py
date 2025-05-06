@@ -32,7 +32,7 @@ headers = {
 }
 
 ### Funciones de Peticiones
-def updateTag(tag){
+def updateTag(tag):
     body_add_tag = [
         {
             "op": "add",
@@ -42,9 +42,9 @@ def updateTag(tag){
     ]
     resp = requests.post(f"https://dev.azure.com/GrupoBancolombia/Vicepresidencia%20Servicios%20de%20Tecnología/_apis/wit/workitems/{azure_id}?api-version=7.1-preview.3", json=body_add_tag, headers=headers)
     print(f"Actualizacion de Tag:{resp}")
-}
 
-def updateArea(route){
+
+def updateArea(route):
     body_update_area = [
         {
             "op": "update",
@@ -54,9 +54,3 @@ def updateArea(route){
     ]
     resp = requests.post(f"https://dev.azure.com/GrupoBancolombia/Vicepresidencia%20Servicios%20de%20Tecnología/_apis/wit/workitems/{azure_id}?api-version=7.1-preview.3", json=body_update_area, headers=headers)
     print(f"Actualizacion de Area:{resp}")
-}
-
-
-
-
-    
