@@ -125,17 +125,6 @@ body_request= [
     "path": "/fields/System.AttachedFiles",
     "value": f"{evidencias}"
   },
-  {
-    "op": "add",
-    "path": "/relations/-",
-    "value": {
-      "rel": "System.LinkTypes.Hierarchy-Reverse",
-      "url": f"https://dev.azure.com/GrupoBancolombia/Vicepresidencia%20Servicios%20de%20Tecnología/_apis/wit/workitems/6129179",
-      "attributes": {
-        "comment": "Estableciendo el work item padre"
-      }
-    }
-  }
 ]
 
 
