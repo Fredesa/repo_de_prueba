@@ -5,7 +5,7 @@ on:
     types: [labeled]
 
 jobs:
-  process_issue:
+  update_issue:
     if: contains(github.event.issue.labels.*.name, 'c:bug')
     runs-on: ubuntu-latest
     steps:
@@ -17,10 +17,7 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Mostrar información del Issue Title
-        run: pip install requests
-
-      - name: Mostrar información del Issue Title
+      - name: Instalar libreria requests en python3
         run: pip3 install requests
 
       - name: Mostrar información del label
@@ -30,5 +27,6 @@ jobs:
         run: python scripts/update_issue_support.py
         env:
           NEW_LABEL: ${{github.event.label.name}}
-          DESCRITION_LABEL: ${{github.event.label.description}}
+          DESCRIPTION_LABEL: ${{github.event.label.description}}
           ISSUE_BODY: ${{ github.event.issue.body}}
+          AZURE_SECRET: ${{secrets.TOKENAZUREISSUE}}
