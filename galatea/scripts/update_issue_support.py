@@ -19,7 +19,7 @@ def search_text(name_input):
 issue_body = os.getenv("ISSUE_BODY", "Cuerpo no disponible")
 new_label = os.getenv("NEW_LABEL", "Nuevo label no disponible")
 azure_secret = os.getenv("AZURE_SECRET","Secreto no disponible")
-
+description_label = os.getenv("DESCRITION_LABEL", "Descripcion no disponible")
 
 ## Variables locales
 azure_id = search_text("Codigo Azure:")
@@ -57,20 +57,11 @@ def updateArea(route):
     print(f"Actualizacion de Area:{resp.content}")
 
 print(azure_id)
-match new_label:
-    case "P0":
-        updateTag(" P0")
-    case "P1":
-        updateTag(" P1")
-    case "P2":
-        updateTag(" P2")
-    case "P3":
-        updateTag(" P3")
-    case "team-soporte":
-        updateArea("EQU0907 - ATLAS")
-    case "team-financieros":
-        updateArea("EQU0825 - VANAHEIM")
-    case _:
-        print("El tag no genera actualizacion")
+
+if new_label.find('team') != -1 :
+    updateArea(description_label)
+else:
+    updateTag(new_label)
+
         
     
