@@ -1,8 +1,4 @@
-
-ls .
-
 file_labels="../repo_de_prueba/Toolkit/labelsGalatea.csv"
-cd repo_de_prueba/
 
 cat "$file_labels" | while IFS= read -r line;
 do
