@@ -1,5 +1,5 @@
 cd ..
-file_labels="../repo_de_prueba/Toolkit/labelsGalatea.csv"
+file_labels="repo_de_prueba/Toolkit/labelsGalatea.csv"
 
 cat "$file_labels" | while IFS= read -r line;
 do
