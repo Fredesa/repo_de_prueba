@@ -30,5 +30,6 @@ mkdir -p $VAR_NAME_ROOT_REPOSITORY/scripts/
 cp --update=none  "galatea/scripts/"* "$VAR_NAME_ROOT_REPOSITORY/scripts/"
 
 #Add actions
+mkdir -p $VAR_NAME_ROOT_REPOSITORY/.github/workflow/
 cp --update=none  "galatea/workflows/"* "$VAR_NAME_ROOT_REPOSITORY/.github/workflow/"
 
