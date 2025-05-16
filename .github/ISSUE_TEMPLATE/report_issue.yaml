@@ -1,4 +1,4 @@
-name: Reportar error
+name: Reportar error PRUEBAS
 description: Utiliza esta opción para reportar errores en el componente.
 labels: ["c:bug"]
 body:
