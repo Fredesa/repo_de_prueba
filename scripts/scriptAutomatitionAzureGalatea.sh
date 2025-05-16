@@ -4,7 +4,7 @@ gh repo clone Fredesa/repo_de_prueba
 
 ls .
 ls ..
-file_labels="../repo_de_prueba/Toolkit/labelsGalatea.csv"
+file_labels="./repo_de_prueba/Toolkit/labelsGalatea.csv"
 cd $VAR_NAME_ROOT_REPOSITORY/
 
 cat "$file_labels" | while IFS= read -r line;
