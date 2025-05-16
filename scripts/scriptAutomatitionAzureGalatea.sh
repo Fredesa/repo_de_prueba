@@ -1,5 +1,6 @@
-cd ..
-file_labels="../repo_de_prueba/Toolkit/labelsGalatea.csv"
+gh repo clone $VAR_NAME_ROOT_REPOSITORY
+
+file_labels="$VAR_NAME_ROOT_REPOSITORY/Toolkit/labelsGalatea.csv"
 cd $VAR_NAME_ROOT_REPOSITORY/
 
 cat "$file_labels" | while IFS= read -r line;
