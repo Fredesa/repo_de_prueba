@@ -19,4 +19,12 @@ jobs:
           VAR_NAME_ROOT_REPOSITORY: ${{ github.repository }}
         run: scripts/scriptAutomatitionAzureGalatea.sh
         shell: bash
+      - name: Push Changes
+        run: |
+          git config user.name bot-bancolombia-toolkit-innersource
+          git config user.email oficina_open_source@bancolombia.com.co
+          git add .
+          git commit -m "chore: Upload Changes bot action bancolombia toolkit innersource"
+          git push
+        shell: bash
      
