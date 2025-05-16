@@ -16,11 +16,11 @@ do
 done
 
 #Update template issue
-cp -f "innersource-toolkit/Toolkit/galatea/report_issue_galatea.yaml" "$VAR_NAME_ROOT_REPOSITORY/.github/ISSUE_TEMPLATE/report_issue.yaml"
+cp -f "$VAR_NAME_ROOT_REPOSITORY/galatea/report_issue_galatea.yaml" "$VAR_NAME_ROOT_REPOSITORY/.github/ISSUE_TEMPLATE/report_issue.yaml"
 
 #Add scripts python
-cp "innersource-toolkit/Toolkit/galatea/scripts"* "$VAR_NAME_ROOT_REPOSITORY/scripts/"
+cp "$VAR_NAME_ROOT_REPOSITORY/galatea/scripts"* "$VAR_NAME_ROOT_REPOSITORY/scripts/"
 
 #Add actions
-cp "innersource-toolkit/Toolkit/galatea/workflows"* "$VAR_NAME_ROOT_REPOSITORY/.github/workflow/"
+cp "$VAR_NAME_ROOT_REPOSITORY/galatea/workflows"* "$VAR_NAME_ROOT_REPOSITORY/.github/workflow/"
 
