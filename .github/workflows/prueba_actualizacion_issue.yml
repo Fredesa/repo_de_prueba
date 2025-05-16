@@ -30,4 +30,5 @@ jobs:
         run: python scripts/update_issue_support.py
         env:
           NEW_LABEL: ${{github.event.label.name}}
+          DESCRITION_LABEL: ${{github.event.label.description}}
           ISSUE_BODY: ${{ github.event.issue.body}}
