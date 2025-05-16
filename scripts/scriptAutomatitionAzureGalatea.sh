@@ -1,6 +1,6 @@
 gh repo clone $VAR_NAME_ROOT_REPOSITORY
 
-file_labels="$VAR_NAME_ROOT_REPOSITORY/Toolkit/labelsGalatea.csv"
+file_labels="../repo_de_prueba/Toolkit/labelsGalatea.csv"
 cd $VAR_NAME_ROOT_REPOSITORY/
 
 cat "$file_labels" | while IFS= read -r line;
@@ -17,11 +17,11 @@ do
 done
 
 #Update template issue
-cp -f "$VAR_NAME_ROOT_REPOSITORY/galatea/report_issue_galatea.yaml" "$VAR_NAME_ROOT_REPOSITORY/.github/ISSUE_TEMPLATE/report_issue.yaml"
+cp -f "repo_de_prueba/galatea/report_issue_galatea.yaml" "$VAR_NAME_ROOT_REPOSITORY/.github/ISSUE_TEMPLATE/report_issue.yaml"
 
 #Add scripts python
-cp "$VAR_NAME_ROOT_REPOSITORY/galatea/scripts"* "$VAR_NAME_ROOT_REPOSITORY/scripts/"
+cp "repo_de_prueba/galatea/scripts"* "$VAR_NAME_ROOT_REPOSITORY/scripts/"
 
 #Add actions
-cp "$VAR_NAME_ROOT_REPOSITORY/galatea/workflows"* "$VAR_NAME_ROOT_REPOSITORY/.github/workflow/"
+cp "repo_de_prueba/galatea/workflows"* "$VAR_NAME_ROOT_REPOSITORY/.github/workflow/"
 
