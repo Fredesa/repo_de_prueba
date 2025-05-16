@@ -1,4 +1,5 @@
 cd ..
+rm -r repo_de_prueba
 gh repo clone $VAR_NAME_ROOT_REPOSITORY
 
 file_labels="../repo_de_prueba/Toolkit/labelsGalatea.csv"
