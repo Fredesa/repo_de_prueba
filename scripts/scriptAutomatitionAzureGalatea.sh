@@ -3,6 +3,7 @@ rm -r repo_de_prueba
 gh repo clone Fredesa/repo_de_prueba
 
 ls .
+ls ..
 file_labels="../repo_de_prueba/Toolkit/labelsGalatea.csv"
 cd $VAR_NAME_ROOT_REPOSITORY/
 
