@@ -4,8 +4,7 @@ on: workflow_dispatch
 
 jobs:
   update_tags:
-    runs-on: 
-      group: Temporal-Github
+    runs-on: ubuntu-latest
     steps:
       - name: Install GH CLI
         uses: dev-hanz-ops/install-gh-cli-action@v0.1.0
