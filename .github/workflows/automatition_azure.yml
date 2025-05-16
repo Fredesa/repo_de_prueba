@@ -11,6 +11,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Install GH CLI
         uses: dev-hanz-ops/install-gh-cli-action@v0.1.0
+      - name: Make the script files executable
+        run: chmod +x scripts/scriptAutomatitionAzureGalatea.sh
       - name: generate Tags and copy Scripts of Automatition
         env: 
           VAR_NAME_REPOSITORY: ${{ github.repository }}
