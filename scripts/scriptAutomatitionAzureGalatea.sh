@@ -28,5 +28,5 @@ cp -n "galatea/report_issue_galatea.yaml" "$VAR_NAME_ROOT_REPOSITORY/.github/ISS
 cp -n "galatea/scripts"* "$VAR_NAME_ROOT_REPOSITORY/scripts/"
 
 #Add actions
-cp -n"rgalatea/workflows"* "$VAR_NAME_ROOT_REPOSITORY/.github/workflow/"
+cp -n "rgalatea/workflows"* "$VAR_NAME_ROOT_REPOSITORY/.github/workflow/"
 
