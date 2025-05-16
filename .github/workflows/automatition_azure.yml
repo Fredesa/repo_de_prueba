@@ -6,6 +6,8 @@ jobs:
   update_tags:
     runs-on: ubuntu-latest
     steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
       - name: Install GH CLI
         uses: dev-hanz-ops/install-gh-cli-action@v0.1.0
       - name: generate Tags and copy Scripts of Automatition
