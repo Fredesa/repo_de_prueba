@@ -21,8 +21,8 @@ jobs:
         shell: bash
       - name: Push Changes
         run: |
-          git config user.name bot-bancolombia-toolkit-innersource
-          git config user.email oficina_open_source@bancolombia.com.co
+          git config user.name yo
+          git config user.email sebastianrodriguezvelasquez@gmail.com
           git add .
           git commit -m "chore: Upload Changes bot action bancolombia toolkit innersource"
           git push
