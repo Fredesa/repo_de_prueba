@@ -8,7 +8,8 @@ jobs:
   process_issue:
     permissions: write-all
     if: contains(github.event.issue.labels.*.name, 'c:bug')
-    runs-on: ubuntu-latest
+    runs-on: 
+      group: Temporal-Github
     steps:
       - name: Clonar el repositorio
         uses: actions/checkout@v3
