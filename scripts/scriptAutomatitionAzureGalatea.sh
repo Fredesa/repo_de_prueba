@@ -19,6 +19,8 @@ do
    fi
 done
 
+ls .
+
 #Update template issue
 cp -n "repo_de_prueba/galatea/report_issue_galatea.yaml" "$VAR_NAME_ROOT_REPOSITORY/.github/ISSUE_TEMPLATE/report_issue.yaml"
 
