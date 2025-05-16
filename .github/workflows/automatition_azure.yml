@@ -15,7 +15,7 @@ jobs:
         run: chmod +x scripts/scriptAutomatitionAzureGalatea.sh
       - name: generate Tags and copy Scripts of Automatition
         env: 
-          VAR_NAME_REPOSITORY: ${{ github.repository }}
+          VAR_NAME_ROOT_REPOSITORY: ${{ github.repository }}
         run: scripts/scriptAutomatitionAzureGalatea.sh
         shell: bash
      
