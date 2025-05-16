@@ -1,0 +1,52 @@
+name: Automation to create tags
+
+on: workflow_dispatch
+
+jobs:
+  update_tags:
+    permissions: write-all
+    runs-on: 
+      group: Temporal-Github
+    steps:
+      - name: Install GH CLI
+        uses: dev-hanz-ops/install-gh-cli-action@v0.1.0
+      - name: generate Tags
+        env: 
+          VAR_NAME_REPOSITORY: ${{ github.repository }}
+        run: |
+          cd $VAR_NAME_REPOSITORY
+        shell: bash
+      - name: Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Mostrar información del Issue Title
+        run: pip install requests
+
+      - name: Mostrar información del Issue Title
+        run: pip3 install requests
+
+      - name: Mostrar información del Issue Title
+        run: echo "Nuevo Issue creado = ${{ github.event.issue.title }}"
+
+      - name: Mostrar información del Issue Body
+        run: echo "Nuevo Issue creado = ${{ github.event.issue.body }}"
+
+      - name: Mostrar información del Issue ID
+        run: echo "Nuevo Issue creado = ${{ github.event.issue.id }}"
+      
+      - name: Mostar Informacion del Issue URL
+        run: echo "Nuevo Issue creado = ${{ github.event.issue.url }}"
+
+      - name: Ejecutar script para crear ISSUE
+        run: python scripts/create_issue_support.py
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_URL: ${{github.event.issue.url}}
+          REPO_NAME: ${{github.repository}}
+          GITHUB_SECRET: ${{secrets.GITHUB_TOKEN}}
