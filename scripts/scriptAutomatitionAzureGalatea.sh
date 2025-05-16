@@ -22,11 +22,13 @@ done
 ls .
 
 #Update template issue
+mkdir -p $VAR_NAME_ROOT_REPOSITORY/.github/ISSUE_TEMPLATE/
 cp -n "galatea/report_issue_galatea.yaml" "$VAR_NAME_ROOT_REPOSITORY/.github/ISSUE_TEMPLATE/report_issue.yaml"
 
 #Add scripts python
-cp -n "galatea/scripts"* "$VAR_NAME_ROOT_REPOSITORY/scripts/"
+mkdir -p $VAR_NAME_ROOT_REPOSITORY/scripts/
+cp -n "galatea/scripts/"* "$VAR_NAME_ROOT_REPOSITORY/scripts/"
 
 #Add actions
-cp -n "rgalatea/workflows"* "$VAR_NAME_ROOT_REPOSITORY/.github/workflow/"
+cp -n "rgalatea/workflows/"* "$VAR_NAME_ROOT_REPOSITORY/.github/workflow/"
 
