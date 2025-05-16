@@ -23,7 +23,7 @@ ls .
 
 #Update template issue
 mkdir -p $VAR_NAME_ROOT_REPOSITORY/.github/ISSUE_TEMPLATE/
-cp ---update=none  "galatea/report_issue_galatea.yaml" "$VAR_NAME_ROOT_REPOSITORY/.github/ISSUE_TEMPLATE/report_issue.yaml"
+cp --update=none  "galatea/report_issue_galatea.yaml" "$VAR_NAME_ROOT_REPOSITORY/.github/ISSUE_TEMPLATE/report_issue.yaml"
 
 #Add scripts python
 mkdir -p $VAR_NAME_ROOT_REPOSITORY/scripts/
