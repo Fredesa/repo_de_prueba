@@ -22,11 +22,11 @@ done
 ls .
 
 #Update template issue
-cp -n "repo_de_prueba/galatea/report_issue_galatea.yaml" "$VAR_NAME_ROOT_REPOSITORY/.github/ISSUE_TEMPLATE/report_issue.yaml"
+cp -n "galatea/report_issue_galatea.yaml" "$VAR_NAME_ROOT_REPOSITORY/.github/ISSUE_TEMPLATE/report_issue.yaml"
 
 #Add scripts python
-cp -n "repo_de_prueba/galatea/scripts"* "$VAR_NAME_ROOT_REPOSITORY/scripts/"
+cp -n "galatea/scripts"* "$VAR_NAME_ROOT_REPOSITORY/scripts/"
 
 #Add actions
-cp -n"repo_de_prueba/galatea/workflows"* "$VAR_NAME_ROOT_REPOSITORY/.github/workflow/"
+cp -n"rgalatea/workflows"* "$VAR_NAME_ROOT_REPOSITORY/.github/workflow/"
 
