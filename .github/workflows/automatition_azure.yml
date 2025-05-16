@@ -4,6 +4,7 @@ on: workflow_dispatch
 
 jobs:
   update_tags:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Clonar el repositorio
