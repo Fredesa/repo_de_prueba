@@ -16,7 +16,7 @@ jobs:
       - name: generate Tags and copy Scripts of Automatition
         env: 
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VAR_NAME_ROOT_REPOSITORY: ${{ github.repository }}
+          VAR_NAME_ROOT_REPOSITORY: "repo_de_prueba"
         run: scripts/scriptAutomatitionAzureGalatea.sh
         shell: bash
       - name: Push Changes
