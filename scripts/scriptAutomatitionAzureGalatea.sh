@@ -1,6 +1,5 @@
-cd ..
-rm -r repo_de_prueba
-gh repo clone Fredesa/repo_de_prueba
+
+ls .
 
 file_labels="../repo_de_prueba/Toolkit/labelsGalatea.csv"
 cd repo_de_prueba/
