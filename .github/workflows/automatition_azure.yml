@@ -11,6 +11,6 @@ jobs:
       - name: generate Tags and copy Scripts of Automatition
         env: 
           VAR_NAME_REPOSITORY: ${{ github.repository }}
-        run: ../scriptAutomatitionAzureGalatea.sh
+        run: ../../scriptAutomatitionAzureGalatea.sh
         shell: bash
      
