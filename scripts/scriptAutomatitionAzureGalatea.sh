@@ -1,6 +1,4 @@
 cd ..
-rm -r repo_de_prueba
-gh repo clone Fredesa/repo_de_prueba
 file_labels="../repo_de_prueba/Toolkit/labelsGalatea.csv"
 
 cat "$file_labels" | while IFS= read -r line;
