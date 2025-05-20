@@ -133,7 +133,7 @@ body_request= [
 ### Peticiones
 
 ##Evento de generacion de issue en Azure
-resp = requests.post(f"{url_azure_issue}", json=body_request, headers=headers)
+resp = requests.post(f"{url_azure_issue}/$issue?api-version=7.1-preview.3", json=body_request, headers=headers)
 
 ## Optencion de ID de Issue en Azure DevOps
 resp_string = json.loads(resp.content)
