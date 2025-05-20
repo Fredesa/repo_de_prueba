@@ -30,7 +30,7 @@ azure_id = search_text("Codigo Azure:")
 ##Cuerpo de Peticion de Issue en Azure
 headers = {
     "Content-Type": "application/json-patch+json",
-    "Authorization": f"Bearer DpvcWcHsEn4QbADZJtyOJdS3723LZLfpvapBu2GhZSOBYE8l50HrJQQJ99ALACAAAAAFtioVAAASAZDODPmh"
+    "Authorization": f"Bearer {azure_secret}"
 }
 
 ### Funciones de Peticiones
