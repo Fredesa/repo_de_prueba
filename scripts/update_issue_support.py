@@ -42,6 +42,8 @@ def updateTag(tag):
             "value": f"{tag}"
         }
     ]
+    print(headers)
+    print(f"{url_azure_issue}{azure_id}?api-version=7.1-preview.3")
     resp = requests.patch(f"{url_azure_issue}{azure_id}?api-version=7.1-preview.3", json=body_add_tag, headers=headers)
     print(f"Actualizacion de Tag:{resp.content}")
 
