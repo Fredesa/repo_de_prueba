@@ -34,6 +34,9 @@ issue_body = os.getenv("ISSUE_BODY", "Cuerpo no disponible")
 issue_url = os.getenv("ISSUE_URL", "Direccion no disponible")
 repo_name = os.getenv("REPO_NAME","Nombre no disponible")
 github_secret = os.getenv("GITHUB_SECRET","Secreto no disponible")
+azure_secret = os.getenv("AZURE_SECRET","Secreto no disponible")
+url_azure_issue = os.getenv("URL_AZURE_ISSUE","URL no disponible")
+url_teams_triage = os.getenv("URL_TEAMS_TRIAGE","URL no disponible")
 
 
 ## Variables locales
@@ -86,7 +89,7 @@ prioridad = "ALTO" if programa == 'SVN' or programa == 'SVP' or programa == 'APP
 ##Cuerpo de Peticion de Issue en Azure
 headers = {
     "Content-Type": "application/json-patch+json",
-    "Authorization": "Bearer DpvcWcHsEn4QbADZJtyOJdS3723LZLfpvapBu2GhZSOBYE8l50HrJQQJ99ALACAAAAAFtioVAAASAZDODPmh"
+    "Authorization": f"Bearer {azure_secret}"
 }
 
 body_request= [
@@ -127,12 +130,10 @@ body_request= [
   },
 ]
 
-
-
 ### Peticiones
 
 ##Evento de generacion de issue en Azure
-resp = requests.post(f"https://dev.azure.com/GrupoBancolombia/Vicepresidencia%20Servicios%20de%20Tecnología/_apis/wit/workitems/$issue?api-version=7.1-preview.3", json=body_request, headers=headers)
+resp = requests.post(f"{url_azure_issue}", json=body_request, headers=headers)
 
 ## Optencion de ID de Issue en Azure DevOps
 resp_string = json.loads(resp.content)
@@ -204,8 +205,8 @@ headers_github = {
 
 respUpdateGithub = requests.patch(f"{issue_url}",headers= headers_github, json=codigo_azure_github)
 
-##Evento de generacion de issue en Azure
-respTeams = requests.post(f"https://prod-41.westus.logic.azure.com:443/workflows/3b6817637bf0410291d94180ed92381b/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=29rs208Kx9Adod43QwAgS7WxjgNPLf4TRf4r5kY7Ps0", json=body_request_teams)
+##Evento de generacion de issue en Teams
+respTeams = requests.post(f"{url_teams_triage}", json=body_request_teams)
 
 print(resp)
 print(respUpdateGithub.content)
