@@ -20,6 +20,7 @@ issue_body = os.getenv("ISSUE_BODY", "Cuerpo no disponible")
 new_label = os.getenv("NEW_LABEL", "Nuevo label no disponible")
 azure_secret = os.getenv("AZURE_SECRET","Secreto no disponible")
 description_label = os.getenv("DESCRITION_LABEL", "Descripcion no disponible")
+url_azure_issue = os.getenv("URL_AZURE_ISSUE","URL no disponible")
 
 ## Variables locales
 azure_id = search_text("Codigo Azure:")
@@ -41,7 +42,7 @@ def updateTag(tag):
             "value": f"{tag}"
         }
     ]
-    resp = requests.patch(f"https://dev.azure.com/GrupoBancolombia/Vicepresidencia%20Servicios%20de%20Tecnología/_apis/wit/workitems/{azure_id}?api-version=7.1-preview.3", json=body_add_tag, headers=headers)
+    resp = requests.patch(f"{url_azure_issue}{azure_id}?api-version=7.1-preview.3", json=body_add_tag, headers=headers)
     print(f"Actualizacion de Tag:{resp.content}")
 
 
@@ -53,7 +54,7 @@ def updateArea(route):
             "value": f"Vicepresidencia Servicios de Tecnología\\Distribución\\EVC - GALATEA MODERNIZACION DE CANALES\\{route}"
         }
     ]
-    resp = requests.patch(f"https://dev.azure.com/GrupoBancolombia/Vicepresidencia%20Servicios%20de%20Tecnología/_apis/wit/workitems/{azure_id}?api-version=7.1-preview.3", json=body_update_area, headers=headers)
+    resp = requests.patch(f"{url_azure_issue}{azure_id}?api-version=7.1-preview.3", json=body_update_area, headers=headers)
     print(f"Actualizacion de Area:{resp.content}")
 
 print(azure_id)
@@ -62,3 +63,6 @@ if new_label.find('team') != -1 :
     updateArea(description_label)
 else:
     updateTag(new_label)
+
+        
+    
