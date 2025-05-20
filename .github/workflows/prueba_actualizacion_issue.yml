@@ -29,5 +29,5 @@ jobs:
           NEW_LABEL: ${{github.event.label.name}}
           DESCRITION_LABEL: ${{github.event.label.description}}
           ISSUE_BODY: ${{ github.event.issue.body}}
-          AZURE_SECRET: ${{secrets.TOKENAZUREISSUE}}
+          AZURE_SECRET: ${{secrets.TOKEN_AZURE_ISSUE}}
           URL_AZURE_ISSUE: ${{secrets.URL_AZURE_ISSUE}}
