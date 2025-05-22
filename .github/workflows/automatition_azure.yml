@@ -13,18 +13,26 @@ jobs:
         uses: dev-hanz-ops/install-gh-cli-action@v0.1.0
       - name: Make the script files executable
         run: chmod +x scripts/scriptAutomatitionAzureGalatea.sh
-      - name: generate Tags and copy Scripts of Automatition
+     # - name: generate Tags and copy Scripts of Automatition
+     #   env: 
+     #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+     #     VAR_NAME_ROOT_REPOSITORY: "repo_de_prueba"
+     #   run: scripts/scriptAutomatitionAzureGalatea.sh
+     #   shell: bash
+      - name: generate custom labels
         env: 
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VAR_NAME_ROOT_REPOSITORY: "repo_de_prueba"
-        run: scripts/scriptAutomatitionAzureGalatea.sh
-        shell: bash
-      - name: Push Changes
+          VAR_CUSTOM_LABELS : "GALATEA"
         run: |
-          git config user.name yo
-          git config user.email sebastianrodriguezvelasquez@gmail.com
-          git add .
-          git commit -m "chore: Upload Changes bot action bancolombia toolkit innersource"
-          git push
+          file_labels="../innersource-toolkit/Toolkit/labels$VAR_CUSTOM_LABELS.csv"
+          echo file_labels
+          ls ..
         shell: bash
+     # - name: Push Changes
+     #   run: |
+     #     git config user.name yo
+     #     git config user.email sebastianrodriguezvelasquez@gmail.com
+     #     git add .
+     #     git commit -m "chore: Upload Changes bot action bancolombia toolkit innersource"
+     #     git push
+     #   shell: bash
      
