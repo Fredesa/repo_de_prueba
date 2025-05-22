@@ -23,7 +23,7 @@ jobs:
         env: 
           VAR_CUSTOM_LABELS : "GALATEA"
         run: |
-          file_labels="../innersource-toolkit/Toolkit/labels$VAR_CUSTOM_LABELS.csv"
+          file_labels="./Toolkit/labels$VAR_CUSTOM_LABELS.csv"
           echo $file_labels
           ls ..
           cd repo_de_prueba/
