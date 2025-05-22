@@ -21,6 +21,7 @@ jobs:
      #   shell: bash
       - name: generate custom labels
         env: 
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VAR_CUSTOM_LABELS : "GALATEA"
         run: |
           file_labels="./Toolkit/labels$VAR_CUSTOM_LABELS.csv"
