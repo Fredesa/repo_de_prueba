@@ -24,7 +24,7 @@ jobs:
           VAR_CUSTOM_LABELS : "GALATEA"
         run: |
           file_labels="../innersource-toolkit/Toolkit/labels$VAR_CUSTOM_LABELS.csv"
-          echo file_labels
+          echo $file_labels
           ls ..
         shell: bash
      # - name: Push Changes
